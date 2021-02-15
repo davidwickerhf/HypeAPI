@@ -1,3 +1,3 @@
-from banking.banking import *
-from banking.hype import Hype
-from banking.timpay import TimPay
+from banking.models.banking import *
+from banking.models.hype import Hype
+from banking.models.timpay import TimPay

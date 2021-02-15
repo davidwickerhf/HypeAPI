@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from banking.banking import Banking
+from banking.models.banking import Banking
 from uuid import uuid4
 import json
 import requests
-from .utils import loginrequired
+from banking.utils.utils import loginrequired
 from datetime import datetime, date
 
 

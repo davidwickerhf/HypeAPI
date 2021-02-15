@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from abc import ABC, abstractmethod
-from .utils import loginrequired
+from ..utils.utils import loginrequired
 import requests
 import json
 
