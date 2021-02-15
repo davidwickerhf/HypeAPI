@@ -3,8 +3,8 @@
 
 import json
 import requests
-from banking import Banking
-from utils import parse_form, loginrequired
+from banking.banking import Banking
+from .utils import parse_form, loginrequired
 
 
 class TimPay(Banking):
