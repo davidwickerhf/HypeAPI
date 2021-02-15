@@ -15,6 +15,7 @@ def hype():
 @click.password_option('--password', help='Your HYPE password', confirmation_prompt=False)
 @click.option('--birthday', required=False, type=click.STRING, default=None, help='Your birthday: yyyy-mm-dd')
 def balance(username, password, birthday):
+    """Get your current HYPE balance"""
     hype = Hype()
     try:
         hype.login(username, password, birthday)
@@ -41,6 +42,7 @@ def balance(username, password, birthday):
 @click.password_option('--password', help='Your HYPE password', confirmation_prompt=False)
 @click.option('--birthday', required=False, type=click.STRING, default=None, help='Your birthday: yyyy-mm-dd')
 def profile(username, password, birthday):
+    """Get info about your HYPE profile."""
     hype = Hype()
     try:
         hype.login(username, password, birthday)
@@ -71,6 +73,8 @@ def profile(username, password, birthday):
 @click.option('--jsonfile', is_flag=True, required=False, default=False, help='Use this flag to output the transactions in a JSON file')
 @click.option('--output', type=click.Path(exists=True, dir_okay=True), help="The path of the output folder", required=False, default=None)
 def movements(username, password, birthday, limit, csvfile, jsonfile, output):
+    """Get a list of movements from HYPE.
+    """
     hype = Hype()
     try:
         hype.login(username, password, birthday)
