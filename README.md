@@ -56,13 +56,12 @@ Lo scopo di questo modulo è quello di accedere programmaticamente ai movimenti 
     </tbody>
 </table>
 
-## Esempi di utilizzo
+# Esempi di utilizzo
 
 ### HYPE
 
 ```python
-import banking
-from hype import Hype
+from banking import Hype
 from getpass import getpass  # For interactive password input
 
 h = Hype()
@@ -76,7 +75,7 @@ h.otp2fa(123456)
 
 try:
     h.get_card_info()
-except banking.Banking.AuthenticationFailure:
+except Hype.AuthenticationFailure:
     # Token has expired
     h.renew()
     h.get_card_info()
@@ -85,8 +84,7 @@ except banking.Banking.AuthenticationFailure:
 ### TIM Pay
 
 ```python
-import banking
-from timpay import TimPay
+from banking import TimPay
 from getpass import getpass  # For interactive password input
 
 t = TimPay()
@@ -96,7 +94,7 @@ t.login("3331234567", "user@example.com", getpass())
 
 try:
     t.get_card_info()
-except banking.Banking.AuthenticationFailure:
+except TimPay.AuthenticationFailure:
     # Token has expired
     t.login("3331234567", "user@example.com", getpass())
     t.get_card_info()
@@ -104,4 +102,4 @@ except banking.Banking.AuthenticationFailure:
 
 ## Disclaimer
 
-I contenuti di questo repository sono a scopo informativo e frutto di ricerca personale. L'autore non è affiliato, associato, autorizzato, appoggiato da o in alcun modo legato con Banca Sella S.p.A., con TIM S.p.A. o con le società controllate da esse. Tutti i marchi registrati appartengono ai rispettivi proprietari.
+> I contenuti di questo repository sono a scopo informativo e frutto di ricerca personale. L'autore non è affiliato, associato, autorizzato, appoggiato da o in alcun modo legato con Banca Sella S.p.A., con TIM S.p.A. o con le società controllate da esse. Tutti i marchi registrati appartengono ai rispettivi proprietari.
