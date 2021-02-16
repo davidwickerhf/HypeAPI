@@ -143,7 +143,7 @@ def movements(username, password, birthday, limit, csvfile, jsonfile, output):
                 data.append(movement.get('surname'))
                 rows.append(data)
 
-            with open(filename, 'w+') as file:
+            with open(filename, 'w+', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow(columns)
                 writer.writerows(rows)

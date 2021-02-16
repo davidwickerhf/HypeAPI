@@ -54,7 +54,9 @@ def parse_movements(data:dict):
             transaction = dict()
             transaction['id'] = movementdata.get('id')
             transaction['title'] = movementdata.get('title')
-            transaction['date'] = movementdata.get('date')
+            date = movementdata.get('date')
+            if date:
+                date = date.split('T')[0]
             
             income = movementdata.get('income')
             amount = movementdata.get('amount')
@@ -63,6 +65,7 @@ def parse_movements(data:dict):
 
             transaction['income'] = income
             transaction['amount'] = amount
+            transaction['date'] = date
             transaction['subType'] = movementdata.get('subType')
             additional = movementdata.get('additionalInfo')
             transaction['category'] = additional.get('category').get('name') if additional else None
